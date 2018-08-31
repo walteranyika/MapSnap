@@ -3,119 +3,45 @@
 <RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
      android:layout_height="match_parent"
     android:layout_width="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
-
-
-
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
-    android:layout_width="match_parent"
-    android:layout_height="300dp"
-    tools:context=".MapsActivity" />
+    xmlns:tools="http://schemas.android.com/tools">
+       <LinearLayout
+           android:layout_marginRight="10dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginTop="3dp"
+           android:orientation="horizontal"
+           android:id="@+id/layout_panel"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
 
-     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_margin="30dp"
-        android:id="@+id/relSearch"
-        android:layout_marginLeft="50dp"
-        android:elevation="10dp"
-        android:layout_height="50dp">
+           <android.support.v7.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_margin="3dp">
+               <fragment
+                   android:id="@+id/place_autocomplete_fragment"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                   />
+           </android.support.v7.widget.CardView>
+       </LinearLayout>
 
-        <android.support.v7.widget.CardView
+
+        <fragment
+            android:layout_below="@id/layout_panel"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20sp">
-            <fragment
-                android:id="@+id/place_autocomplete_fragment"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
-                />
-        </android.support.v7.widget.CardView>
-
-
-    </RelativeLayout>
+            android:layout_height="match_parent"
+            tools:context=".MapsActivity" />
 
 
 
 
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:text="Type Of Soil : Loam"
-       android:textStyle="bold"
-        android:layout_marginTop="350dp"
-        android:layout_marginLeft="30dp"
-        android:textColor="#30a5bf"
-        android:layout_height="wrap_content" />
 
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:text="Size Of Land"
-            android:textStyle="bold"
-            android:layout_marginTop="390dp"
-            android:layout_marginLeft="30dp"
-            android:textColor="#30a5bf"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="40dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="380dp"
-        android:layout_marginLeft="150dp"
-        android:ems="10"
-        android:inputType="numberDecimal" />
-
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="40dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="380dp"
-        android:layout_marginLeft="240dp"
-        android:ems="10"
-        android:inputType="numberDecimal" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:text="Crop to farm"
-        android:textStyle="bold"
-        android:layout_marginTop="430dp"
-        android:layout_marginLeft="30dp"
-        android:textColor="#30a5bf"
-        android:layout_height="wrap_content" />
-
-
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="70dp"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="430dp"
-        android:layout_height="wrap_content"
-        android:spinnerMode="dropdown"/>
-
-
-    <Button
-        android:id="@+id/btnEnter"
-        android:layout_width="320dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="480dp"
-        android:background="@drawable/enter"
-        android:gravity="center"
-        android:text="ENTER"
-        android:textColor="#FFF" />
 
 
 </RelativeLayout>
